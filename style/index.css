@@ -27,6 +27,8 @@ body
 
     .header > .logo > .ad 
     {
+        width:234px;
+        height:60px;
         position: absolute;
         right: 10px;
         top: 20px;
