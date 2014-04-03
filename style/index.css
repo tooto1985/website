@@ -25,6 +25,13 @@ body
         float: left;
     }
 
+    .header > .logo > .ad 
+    {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
+
     .header > .title
     {
         height: 100px;
