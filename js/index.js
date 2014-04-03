@@ -23,6 +23,7 @@ $(function () {
     (function () {
         $.ajax({
             url: "data/data.json",
+            contentType: "application/json",
             dataType: "json",
             success: function (data) {
                 alert(data.length);
