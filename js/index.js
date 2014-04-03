@@ -1,20 +1,21 @@
-﻿function getContentHeight() {
-    return $(window).height() - $(".header").height() - $(".footer").height();
-}
+﻿$(function () {
 
-function jsbinembed(code, version) {
-    $(".content").html("<a class=\"jsbin-embed\" href=\"http://jsbin.com/" + code + "/" + version + "/embed?js,output&height=" + getContentHeight() + "px\">JS Bin</a>");
-    jsbinrender();
-}
-
-$(function () {
-    $(".menu").on("click", "span", function () {
-        for (var i = 0, max = data.length; i < max; i++) {
-            if (data[i].name === $(this).text()) {
-                jsbinembed(data[i].code, data[i].version);
-            }
+    function map(value, fromLow, fromHigh, toLow, toHigh) {
+        var a = (fromHigh - fromLow) / (value - fromLow);
+        if (a === Infinity || value === fromLow) {
+            return toLow;
         }
-    });
+        return ((toHigh - toLow) / ((fromHigh - fromLow) / (value - fromLow))) + toLow;
+    }
+
+    function getContentHeight() {
+        return $(window).height() - $(".header").height() - $(".footer").height();
+    }
+
+    function jsbinembed(code, version) {
+        $(".content").html("<a class=\"jsbin-embed\" href=\"http://jsbin.com/" + code + "/" + version + "/embed?js,output&height=" + getContentHeight() + "px\">JS Bin</a>");
+        jsbinrender();
+    }
 
     $(".header,.menu").on("mouseenter mouseleave", function (e) {
         var $menu = $(".menu");
@@ -24,23 +25,45 @@ $(function () {
             $menu.stop(false, false).slideUp("fast");
         }
     });
+
+    $(".menu").on("click", "span", function () {
+        for (var i = 0, max = data.length; i < max; i++) {
+            if (data[i].name === $(this).text()) {
+                jsbinembed(data[i].code, data[i].version);
+            }
+        }
+    });
+
+    $(".menu").on("mousemove",function(e){
+        var x =e.pageX,
+        width = $(window).width(),
+        left = 0-($(".menu>div").width()-$(window).width());
+        $(".menu>div").css({"left":map(x,0,width,0,left)});
+    });
+
     $(window).resize(function () {
         $(".content").find(">iframe").css({ "min-height": getContentHeight(), "max-height": getContentHeight() });
     });
 
     (function () {
         var html = "";
+        html += "<div>";
         for (var i = 0, max = data.length; i < max; i++) {
             html += "<span>" + data[i].name + "</span>";
         }
+        html += "</div>";
         $(".menu").html(html);
+        var totalWidth=0;
+        $(".menu>div>span").each(function(i) {
+            totalWidth += $(this).outerWidth(true); 
+        });
+        $(".menu>div").width(totalWidth);
     })(); //generate menu
 
     (function () {
         $(".menu").hide();
-        jsbinembed("xigaf", 4);
+        $(".menu>span:eq(0)").click();
     })(); //initializing
-
 
     (function () {
         (function (i, s, o, g, r, a, m) {
