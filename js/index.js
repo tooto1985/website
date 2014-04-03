@@ -21,14 +21,18 @@ $(function () {
     });
 
     (function () {
-        $.ajax({
-            url: "data/data.json",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (data) {
-                alert(data.length);
-            }
+        $.getJSON("data/data.json").done(function(data) {
+            alert(data);
         });
+
+        //$.ajax({
+        //    url: "data/data.json",
+        //    type: "get",
+        //    dataType: "json",
+        //    success: function (data) {
+        //        alert(data);
+        //    }
+        //});
     })(); //menu
 
     $(".menu").hide();
