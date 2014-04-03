@@ -34,7 +34,7 @@
         }
     });
 
-    $(".menu").on("mousemove",function(e){
+    $(".header,.menu").on("mousemove",function(e){
         var x =e.pageX,
         width = $(window).width(),
         left = 0-($(".menu>div").width()-$(window).width());
@@ -62,7 +62,7 @@
 
     (function () {
         $(".menu").hide();
-        $(".menu>span:eq(0)").click();
+        $(".menu>div>span:eq(0)").click();
     })(); //initializing
 
     (function () {
