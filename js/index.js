@@ -35,10 +35,13 @@
     });
 
     $(".header,.menu").on("mousemove",function(e){
-        var x =e.pageX,
-        width = $(window).width(),
-        left = 0-($(".menu>div").width()-$(window).width());
-        $(".menu>div").css({"left":map(x,0,width,0,left)});
+        var space=50,
+            x = e.pageX,
+            width = $(window).width()-space,
+            left = 0-($(".menu>div").width()-$(window).width());
+        if(left<0 && x > space && x < width){
+            $(".menu>div").css({"left":map(x,space,width,0,left)});
+        }
     });
 
     $(window).resize(function () {
@@ -46,18 +49,44 @@
     });
 
     (function () {
-        var html = "";
-        html += "<div>";
-        for (var i = 0, max = data.length; i < max; i++) {
-            html += "<span>" + data[i].name + "</span>";
+        function search(text) {
+            var html = "";
+            html += "<div>";
+            for (var i = 0, max = data.length; i < max; i++) {
+                if (text===undefined || data[i].name.toLowerCase().indexOf(text.toLowerCase())>-1) {
+                    html += "<span>" + data[i].name + "</span>";
+                }
+            }
+            html += "</div>";
+            $(".menu").html(html);
+            var totalWidth=0;
+            $(".menu>div>span").each(function(i) {
+                totalWidth += $(this).outerWidth(true); 
+            });
+            $(".menu>div").width(totalWidth);
         }
-        html += "</div>";
-        $(".menu").html(html);
-        var totalWidth=0;
-        $(".menu>div>span").each(function(i) {
-            totalWidth += $(this).outerWidth(true); 
+
+
+        $(".search>input").click(function(){
+            if ($(this).val()==="Search") {
+                $(this).val("");
+            }
         });
-        $(".menu>div").width(totalWidth);
+
+        $(".search>input").blur(function(){
+            if ($(this).val()==="") {
+                $(this).val("Search");
+            }
+        });
+
+        $(".search>input").keyup(function(e) {
+            //if (e.keyCode === 13) {
+                search($(this).val())
+            //}
+
+        });
+
+        search();
     })(); //generate menu
 
     (function () {
