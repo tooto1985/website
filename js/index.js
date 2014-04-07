@@ -30,6 +30,7 @@
         for (var i = 0, max = data.length; i < max; i++) {
             if (data[i].name === $(this).text()) {
                 jsbinembed(data[i].code, data[i].version);
+                location.href = location.href.split("#")[0] + "#" + data[i].name;
             }
         }
     });
@@ -110,20 +111,14 @@
     })(); //initializing
 
     (function() {
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments);
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m);
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        // ReSharper disable UseOfImplicitGlobalInFunctionScope
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
         ga('create', 'UA-49667069-1', 'tooto1985.github.io');
         ga('send', 'pageview');
-        // ReSharper restore UseOfImplicitGlobalInFunctionScope
+
+
     })(); //google analytics
 });
