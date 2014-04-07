@@ -115,15 +115,24 @@ body
     line-height: 30px;
 }
 
-.footer > .contact {
-    float: right;
-    padding-right: 10px;
-}
-.footer > .contact > span {
-    padding-left: 10px;
-}
+    .footer > .contact
+    {
+        float: right;
+        padding-right: 10px;
+    }
 
-.footer > .result {
-    float: left;
-    padding-left: 10px;
-}
+        .footer > .contact > span
+        {
+            padding-left: 10px;
+        }
+
+        .footer > .contact > .aboutme
+        {
+            cursor: pointer;
+        }
+
+    .footer > .result
+    {
+        float: left;
+        padding-left: 10px;
+    }
