@@ -43,6 +43,7 @@
         if (left < 0 && x > space && x < width) {
             $(".menu>div").css({ "left": map(x, space, width, 0, left) });
         }
+        e.stopPropagation();
     });
 
     $(".aboutme").on("click", function () {
@@ -54,7 +55,6 @@
             }
         });
     });
-    
 
     $(window).resize(function() {
         $(".content").find(">iframe").css({ "min-height": getContentHeight(), "max-height": getContentHeight() });
