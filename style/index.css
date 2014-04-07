@@ -25,6 +25,15 @@ body
         float: left;
     }
 
+    .header > .logo > .ad 
+    {
+        width:234px;
+        height:60px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
+
     .header > .title
     {
         height: 100px;
@@ -32,6 +41,30 @@ body
         font-weight: bold;
         color: white;
         line-height: 96px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .header > .search 
+    {
+        float:left;
+        height:100px;
+
+    }
+
+    .header > .search > input
+    {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        height: 23px;
+        width: 197px;
+        margin-top: 40px;
+        font-size: 19px;
+        background-color: rgba(255,255,255,0.25);
+        color: white;
+        padding-left: 3px;
+        outline: none;
     }
 
 .menu
@@ -41,14 +74,27 @@ body
     position: absolute;
     top: 100px;
     background-color: lightsteelblue;
+    overflow: hidden;
 }
 
-    .menu > span
+    .menu > div {
+        position: relative;
+    }
+
+    .menu > div > span
     {
-        margin-left: 10px;
+        padding: 0 10px;
         line-height: 36px;
         cursor: pointer;
         color: dimgrey;
+        height: 36px;
+        display: block;
+        float: left;
+    }
+
+    .menu > div > span:hover 
+    {
+        background-color: rgba(255,255,255,0.5);
     }
 
 .content
