@@ -70,15 +70,18 @@
         }
 
         function search(text) {
-            var html = "";
+            var count=0,
+                html = "";
             html += "<div>";
             for (var i = 0, max = data.length; i < max; i++) {
                 if (text === null || text === undefined || searchKeyword(data[i].name, data[i].keyword, text)) {
                     html += "<span>" + data[i].name + "</span>";
+                    count++;
                 }
             }
             html += "</div>";
             $(".menu").html(html);
+            $(".result").html("Find " + count + " item" + (count > 1 ? "s" : "") + ".");
             var totalWidth = 0;
             $(".menu>div>span").each(function() {
                 totalWidth += $(this).outerWidth(true);
@@ -89,6 +92,8 @@
         $(".search>input").click(function() {
             if ($(this).val() === "Search") {
                 $(this).val("");
+            } else {
+                $(this).select();
             }
         });
 

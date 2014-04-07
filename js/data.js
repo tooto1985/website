@@ -1,4 +1,6 @@
 ﻿var data = [
+    
+    //應用
     {
         name: "圖片放大鏡",
         code: "tiwem",
@@ -53,6 +55,8 @@
         version: 7,
         keyword: ["dom","element","viewer"]
     },
+    
+    //jQuery
     {
         name: "jQuery自訂plug-in",
         code: "tojoq",
@@ -65,6 +69,8 @@
         version: 4,
         keyword: ["selector","custom", "jquery"]
     },
+    
+    //原生js
     {
         name: "取代字串中的格式項目",
         code: "wegop",
@@ -76,6 +82,14 @@
         code: "toxut",
         version: 4,
         keyword: ["for","loop","object","property"]
+    },
+    
+    //物件導向, 設計模式
+    {
+        name: "繼承",
+        code: "yuyaf",
+        version: 1,
+        keyword: ["oo", "inheritance"]
     },
     {
         name: "單體模式",
@@ -89,10 +103,18 @@
         version: 5,
         keyword: ["design","pattern"]
     },
+    
+    // AngularJS
     {
         name: "AngularJS判斷何種三角形",
         code: "qudoh",
         version: 6,
         keyword: ["angular","js"]
+    },
+    {
+        name: "AngularJS可支援壓縮",
+        code: "zexan",
+        version: 7,
+        keyword: ["angular","js","minify"]
     }
 ];
