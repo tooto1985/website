@@ -31,6 +31,7 @@
             if (data[i].name === $(this).text()) {
                 jsbinembed(data[i].code, data[i].version);
                 location.href = location.href.split("#")[0] + "#" + data[i].name;
+                ga('send', 'pageview', location.href);
             }
         }
     });
