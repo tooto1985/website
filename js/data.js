@@ -2,42 +2,56 @@
     {
         name: "圖片放大鏡",
         code: "tiwem",
-        version: 3
+        version: 4,
+        keyword: ["image", "elevate","zoom", "plug-in"]
     },
     {
         name: "圖片固定比例",
         code: "hugal",
-        version: 3
+        version: 6,
+        keyword: ["image","proportion","zoom"]
     },
     {
         name: "偵測滑鼠滾輪方向",
         code: "lazox",
-        version: 2
+        version: 3,
+        keyword: ["detection", "mouse", "wheel"]
     },
     {
-        name: "滑鼠滑出入方向",
+        name: "偵測滑鼠滑出滑入方向",
         code: "nijuw",
-        version: 4
+        version: 6,
+        keyword: ["detection","mouse","direction"]
     },
     {
         name: "語音輸入",
         code: "ibAreJo",
-        version: 2
+        version: 3,
+        keyword: ["voice","input"]
     },
     {
         name: "倒數計時器",
         code: "luyas",
-        version: 17
+        version: 19,
+        keyword: ["reciprocal","time"]
+    },
+    {
+        name: "距離2015跨年倒數計時",
+        code: "luyas",
+        version: 21,
+        keyword: ["reciprocal", "new", "year", "time"]
     },
     {
         name: "輸入框滑動",
         code: "izojaVU",
-        version: 4
+        version: 5,
+        keyword: ["input","move"]
     },
     {
         name: "DOM檢視器",
         code: "xigaf",
-        version: 5
+        version: 7,
+        keyword: ["dom","element","viewer"]
     },
     {
         name: "jQuery自定plug-in",
@@ -74,4 +88,4 @@
         code: "qudoh",
         version: 4
     }
-]
+];
