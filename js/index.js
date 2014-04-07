@@ -68,9 +68,36 @@
         e.stopPropagation();
     });
 
-    $(".aboutme").on("click", function () {
+    $(".library").on("click",function() {
+        location.href = root;
+    });
+
+    $(".blog").on("click", function () {
+        $(".title").text("Tommy's Blog");
         $.ajax({
-            url: "aboutme.html",
+            url: "blog.html",
+            dataType: "html",
+            success: function(html) {
+                $(".content").html(html);
+            }
+        });
+    });
+
+    $(".about").on("click", function () {
+        $(".title").text("Tommy's About");
+        $.ajax({
+            url: "about.html",
+            dataType: "html",
+            success: function(html) {
+                $(".content").html(html);
+            }
+        });
+    });
+
+    $(".contact").on("click", function () {
+        $(".title").text("Tommy's Contact");
+        $.ajax({
+            url: "contact.html",
             dataType: "html",
             success: function(html) {
                 $(".content").html(html);
