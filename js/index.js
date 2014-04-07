@@ -45,6 +45,17 @@
         }
     });
 
+    $(".aboutme").on("click", function () {
+        $.ajax({
+            url: "aboutme.html",
+            dataType: "html",
+            success: function(html) {
+                $(".content").html(html);
+            }
+        });
+    });
+    
+
     $(window).resize(function() {
         $(".content").find(">iframe").css({ "min-height": getContentHeight(), "max-height": getContentHeight() });
     });
