@@ -92,6 +92,11 @@ body
             float: left;
         }
 
+            .menu > div > span.selected
+            {
+                background-color: silver;
+            }
+
             .menu > div > span:hover
             {
                 background-color: #ffffff;

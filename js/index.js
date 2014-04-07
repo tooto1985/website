@@ -1,5 +1,7 @@
 ﻿$(function() {
 
+    var hash = location.hash.substring(1,location.hash.length);
+
     function map(value, fromLow, fromHigh, toLow, toHigh) {
         var a = (fromHigh - fromLow) / (value - fromLow);
         if (a === Infinity || value === fromLow) {
@@ -17,6 +19,26 @@
         jsbinrender();
     }
 
+    function openjsbin(name, isFirst) {
+        var isFind = false;
+        for (var i = 0, max = data.length; i < max; i++) {
+            if (data[i].name === name || isFirst) {
+                jsbinembed(data[i].code, data[i].version);
+                if (!isFirst) {
+                    location.href = location.href.split("#")[0] + "#" + name;
+                }
+                $(".menu>div>span.selected").removeClass("selected");
+                $(".menu>div>span:contains('" + name + "')").addClass("selected");
+                isFind = true;
+                break;
+            }
+        }
+        if (!isFind) {
+            alert("not find!");
+            location.href = location.href.split("#")[0];
+        }
+    }
+
     $(".header,.menu").on("mouseenter mouseleave", function(e) {
         var $menu = $(".menu");
         if (e.type === "mouseenter") {
@@ -27,12 +49,7 @@
     });
 
     $(".menu").on("click", "span", function() {
-        for (var i = 0, max = data.length; i < max; i++) {
-            if (data[i].name === $(this).text()) {
-                jsbinembed(data[i].code, data[i].version);
-                location.href = location.href.split("#")[0] + "#" + data[i].name;
-            }
-        }
+        openjsbin($(this).text(),false);
     });
 
     $(".header,.menu").on("mousemove", function(e) {
@@ -123,7 +140,7 @@
 
     (function() {
         $(".menu").hide();
-        $(".menu>div>span:eq(0)").click();
+        openjsbin(hash,hash==="");
     })(); //initializing
 
     (function() {
