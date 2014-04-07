@@ -24,6 +24,7 @@ body
         height: 60px;
         margin: 10px;
         float: left;
+        cursor: pointer;
     }
 
         .header > .logo > .ad
@@ -43,6 +44,7 @@ body
         line-height: 44px;
         float: left;
         margin-right: 10px;
+        cursor: pointer;
     }
 
     .header > .search > input

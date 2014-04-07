@@ -1,6 +1,7 @@
 ﻿$(function() {
 
-    var hash = location.hash.substring(1,location.hash.length);
+    var root = "/website/",
+        hash = location.hash.substring(1,location.hash.length);
 
     function map(value, fromLow, fromHigh, toLow, toHigh) {
         var a = (fromHigh - fromLow) / (value - fromLow);
@@ -38,6 +39,10 @@
             location.href = location.href.split("#")[0];
         }
     }
+
+    $(".logo,.title").on("click",function() {
+        location.href = root;
+    });
 
     $(".header,.menu").on("mouseenter mouseleave", function(e) {
         var $menu = $(".menu");
