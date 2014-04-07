@@ -2,8 +2,8 @@
     {
         name: "圖片放大鏡",
         code: "tiwem",
-        version: 4,
-        keyword: ["image", "elevate","zoom", "plug-in"]
+        version: 5,
+        keyword: ["image", "elevate","zoom", "jquery" , "plug-in"]
     },
     {
         name: "圖片固定比例",
@@ -14,7 +14,7 @@
     {
         name: "偵測滑鼠滾輪方向",
         code: "lazox",
-        version: 3,
+        version: 5,
         keyword: ["detection", "mouse", "wheel"]
     },
     {
@@ -54,38 +54,45 @@
         keyword: ["dom","element","viewer"]
     },
     {
-        name: "jQuery自定plug-in",
+        name: "jQuery自訂plug-in",
         code: "tojoq",
-        version: 1
+        version: 3,
+        keyword: ["custom","jquery", "plug-in"]
     },
     {
         name: "jQuery自定偽類選擇器",
         code: "busap",
-        version: 3
+        version: 4,
+        keyword: ["selector","custom", "jquery"]
     },
     {
-        name: "取代字串格式",
+        name: "取代字串中的格式項目",
         code: "wegop",
-        version: 5
+        version: 6,
+        keyword: ["replace","string","format"]
     },
     {
-        name: "列舉物件屬性",
+        name: "用迴圈列舉物件屬性",
         code: "toxut",
-        version: 3
+        version: 4,
+        keyword: ["for","loop","object","property"]
     },
     {
         name: "單體模式",
         code: "juxal",
-        version: 2
+        version: 2,
+        keyword: ["design", "pattern", "singleton"]
     },
     {
         name: "鏈接模式",
         code: "wigalu",
-        version: 3
+        version: 5,
+        keyword: ["design","pattern"]
     },
     {
-        name: "AngularJS練習",
+        name: "AngularJS判斷何種三角形",
         code: "qudoh",
-        version: 4
+        version: 6,
+        keyword: ["angular","js"]
     }
 ];
