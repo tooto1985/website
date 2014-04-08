@@ -123,19 +123,19 @@ body
     line-height: 30px;
 }
 
-    .footer > .contacts
+    .footer > .right
     {
         float: right;
         padding-right: 10px;
     }
 
-        .footer > .contacts > span
+        .footer > .right > span
         {
             padding-left: 10px;
             cursor: pointer;
         }
 
-    .footer > .result
+    .footer > .left
     {
         float: left;
         padding-left: 10px;

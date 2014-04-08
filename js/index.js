@@ -1,7 +1,7 @@
 ﻿$(function() {
 
     var root = "/website/",
-        hash = location.hash.substring(1,location.hash.length);
+        hash = location.hash.substring(1, location.hash.length);
 
     function map(value, fromLow, fromHigh, toLow, toHigh) {
         var a = (fromHigh - fromLow) / (value - fromLow);
@@ -15,16 +15,16 @@
         return $(window).height() - $(".header").height() - $(".footer").height();
     }
 
-    function jsbinembed(code, version) {
+    function jsBinEmbed(code, version) {
         $(".content").html("<a class=\"jsbin-embed\" href=\"http://jsbin.com/" + code + "/" + version + "/embed?js,output&height=" + getContentHeight() + "px\">JS Bin</a>");
         jsbinrender();
     }
 
-    function openjsbin(name, isFirst) {
+    function openJsBin(name, isFirst) {
         var isFind = false;
         for (var i = 0, max = data.length; i < max; i++) {
             if (data[i].name === name || isFirst) {
-                jsbinembed(data[i].code, data[i].version);
+                jsBinEmbed(data[i].code, data[i].version);
                 if (!isFirst) {
                     location.href = location.href.split("#")[0] + "#" + name;
                 }
@@ -40,7 +40,7 @@
         }
     }
 
-    $(".logo,.title").on("click",function() {
+    $(".logo,.title").on("click", function() {
         location.href = root;
     });
 
@@ -54,7 +54,7 @@
     });
 
     $(".menu").on("click", "span", function() {
-        openjsbin($(this).text(),false);
+        openJsBin($(this).text(), false);
     });
 
     $(".header,.menu").on("mousemove", function(e) {
@@ -66,43 +66,6 @@
             $(".menu>div").css({ "left": map(x, space, width, 0, left) });
         }
         e.stopPropagation();
-    });
-
-    $(".library").on("click",function() {
-        location.href = root;
-    });
-
-    $(".blog").on("click", function () {
-        $(".title").text("Tommy's Blog");
-        $.ajax({
-            url: "blog.html",
-            dataType: "html",
-            success: function(html) {
-                $(".content").html(html);
-            }
-        });
-    });
-
-    $(".about").on("click", function () {
-        $(".title").text("Tommy's About");
-        $.ajax({
-            url: "about.html",
-            dataType: "html",
-            success: function(html) {
-                $(".content").html(html);
-            }
-        });
-    });
-
-    $(".contact").on("click", function () {
-        $(".title").text("Tommy's Contact");
-        $.ajax({
-            url: "contact.html",
-            dataType: "html",
-            success: function(html) {
-                $(".content").html(html);
-            }
-        });
     });
 
     $(window).resize(function() {
@@ -130,7 +93,7 @@
         }
 
         function search(text) {
-            var count=0,
+            var count = 0,
                 html = "";
             html += "<div>";
             for (var i = 0, max = data.length; i < max; i++) {
@@ -141,7 +104,7 @@
             }
             html += "</div>";
             $(".menu").html(html);
-            $(".result").html("Find " + count + " item" + (count > 1 ? "s" : "") + ".");
+            $(".left").html("Find " + count + " item" + (count > 1 ? "s" : "") + ".");
             var totalWidth = 0;
             $(".menu>div>span").each(function() {
                 totalWidth += $(this).outerWidth(true);
@@ -172,14 +135,21 @@
 
     (function() {
         $(".menu").hide();
-        openjsbin(hash,hash==="");
+        openJsBin(hash, hash === "");
     })(); //initializing
 
     (function() {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-49667069-1', 'tooto1985.github.io');
         ga('send', 'pageview');
     })(); //google analytics
