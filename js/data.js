@@ -4,7 +4,7 @@
     {
         name: "圖片放大鏡",
         code: "tiwem",
-        version: 5,
+        version: 6,
         keyword: ["image", "elevate","zoom", "jquery" , "plug-in"]
     },
     {
