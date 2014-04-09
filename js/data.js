@@ -1,6 +1,12 @@
 ﻿var data = [
     
     //應用
+	{
+        name: "翻牌遊戲",
+        code: "xapep",
+        version: 1,
+        keyword: ["game", "card"]
+	},
     {
         name: "圖片放大鏡",
         code: "tiwem",
