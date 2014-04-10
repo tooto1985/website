@@ -2,6 +2,12 @@
     
     //應用
 	{
+        name: "刮刮樂",
+        code: "wenej",
+        version: 2,
+        keyword: ["game", "scratch"]
+	},	
+	{
         name: "翻牌遊戲",
         code: "xapep",
         version: 1,
@@ -11,7 +17,7 @@
         name: "圖片放大鏡",
         code: "tiwem",
         version: 6,
-        keyword: ["image", "elevate","zoom", "jquery" , "plug-in"]
+        keyword: ["image", "elevate","zoom", "jquery"]
     },
     {
         name: "圖片固定比例",
@@ -67,7 +73,7 @@
         name: "jQuery自訂plug-in",
         code: "tojoq",
         version: 3,
-        keyword: ["custom","jquery", "plug-in"]
+        keyword: ["custom","jquery", "plug", "in"]
     },
     {
         name: "jQuery自定偽類選擇器",
@@ -122,5 +128,11 @@
         code: "zexan",
         version: 7,
         keyword: ["angular","js","minify"]
-    }
+    },
+	{
+        name: "AngularJS網頁樣板",
+        code: "bonef",
+        version: 1,
+        keyword: ["angular","js","repeat"]
+	}
 ];
