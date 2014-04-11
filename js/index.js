@@ -27,7 +27,9 @@
                 jsBinEmbed(data[i].code, data[i].version);
                 if (!isFirst) {
                     location.href = location.href.split("#")[0] + "#" + name;
-                    ga('send', 'pageview', { page: location.pathname + "#" + name });
+                    setTimeout(function () {
+                        ga.create("UA-49667069-1", "auto", { name: "UA-49667069-1" }).send("pageview", { page: location.pathname + "#" + name });
+                    }, 500);
                 }
                 $(".menu>div>span.selected").removeClass("selected");
                 $(".menu>div>span:contains('" + name + "')").addClass("selected");
