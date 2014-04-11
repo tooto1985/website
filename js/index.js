@@ -27,10 +27,7 @@
                 jsBinEmbed(data[i].code, data[i].version);
                 if (!isFirst) {
                     location.href = location.href.split("#")[0] + "#" + name;
-                    if (ga["create"] === undefined || ga["create"] === null) {
-                        ga('create', 'UA-49667069-1', 'tooto1985.github.io');
-                    }
-                    ga.create("UA-49667069-1", "auto", { name: "UA-49667069-1" }).send("pageview", { page: location.pathname + "#" + name });
+                    ga('send', 'pageview', { page: location.pathname + "#" + name });
                 }
                 $(".menu>div>span.selected").removeClass("selected");
                 $(".menu>div>span:contains('" + name + "')").addClass("selected");
