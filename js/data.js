@@ -70,6 +70,12 @@
     
     //jQuery
     {
+        name: "jQuery事件動態繫結",
+        code: "josay",
+        version: 2,
+        keyword: ["jquery", "event", "dynamic"]
+    },
+    {
         name: "jQuery自訂plug-in",
         code: "tojoq",
         version: 3,
