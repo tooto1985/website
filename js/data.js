@@ -10,7 +10,7 @@
 	{
         name: "翻牌遊戲",
         code: "xapep",
-        version: 1,
+        version: 2,
         keyword: ["game", "card"]
 	},
     {
