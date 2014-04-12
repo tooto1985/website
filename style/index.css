@@ -140,3 +140,41 @@ body
         float: left;
         padding-left: 10px;
     }
+
+.box 
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.box .aboutme
+{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.box .aboutme .description 
+{
+    font-size: 15px;
+    color:gray;
+}
+
+.box .aboutme td>div
+{
+    height: 100%;
+    overflow: scroll;
+}
+
+.box .aboutme td>div>div 
+{
+    height: 25px;
+    font-size: 13px;
+}

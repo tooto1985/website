@@ -43,6 +43,24 @@
         }
     }
 
+    function aboutme() {
+        var html="";
+        html+="<div class=\"aboutme\">";
+        $.ajax({
+            url:"aboutme.html",
+            async:false,
+            dataType: "html",
+            success: function(data) {
+                html+=data;
+            }
+        });
+        html+="</div>";
+        $(".box").off("click",">.aboutme").on("click",">.aboutme",function(e){
+            e.stopPropagation();
+        });
+        return html;     
+    }
+
     $(".logo,.title").on("click", function() {
         location.href = root;
     });
@@ -71,12 +89,23 @@
         e.stopPropagation();
     });
 
+    $(".footer>.right>.aboutme").on("click",function(){
+        $(".box").html(aboutme()).fadeIn();
+        var marginTop = ($(window).height()-$(".box>.aboutme").height())/2;
+        $(".box>.aboutme").css({"margin-top":marginTop});
+    });
+
+    $(".box").on("click",function(){
+        $(".box").fadeOut(function(){
+            $(".box").html("");
+        });
+    });
+
     $(window).resize(function() {
         $(".content").find(">iframe").css({ "min-height": getContentHeight(), "max-height": getContentHeight() });
     });
 
     (function() {
-
         function searchKeyword(source, keyword, text) {
             var result;
             text = text.toLowerCase();
@@ -94,7 +123,6 @@
             }
             return false;
         }
-
         function search(text) {
             var count = 0,
                 html = "";
@@ -114,7 +142,6 @@
             });
             $(".menu>div").width(totalWidth);
         }
-
         $(".search>input").click(function() {
             if ($(this).val() === "Search") {
                 $(this).val("");
@@ -122,17 +149,14 @@
                 $(this).select();
             }
         });
-
         $(".search>input").blur(function() {
             if ($(this).val() === "") {
                 $(this).val("Search");
             }
         });
-
         $(".search>input").keyup(function() {
             search($(this).val());
         });
-
         search();
     })(); //generate menu
 
