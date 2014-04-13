@@ -20,6 +20,19 @@
         jsbinrender();
     }
 
+    function addClicked(code) {
+        try{
+            $.ajax({
+                url: "http://linyitai.somee.com/website2/default.ashx",
+                data: {
+                    action:"clicked",
+                    code: code
+                }
+            });
+        } catch (e) {
+        }
+    }
+
     function openJsBin(name, isFirst) {
         var isFind = false;
         for (var i = 0, max = data.length; i < max; i++) {
@@ -29,6 +42,7 @@
                     location.href = location.href.split("#")[0] + "#" + name;
                     setTimeout(function() {
                         ga.create("UA-49667069-1", "auto", { name: "UA-49667069-1" }).send("pageview", { page: location.pathname + "#" + name });
+                        addClicked(data[i].code);
                     }, 500);
                 }
                 $(".menu>div>span.selected").removeClass("selected");

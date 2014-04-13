@@ -142,3 +142,14 @@
         keyword: ["angular","js","repeat"]
 	}
 ];
+try {
+    $.ajax({
+        url: "http://linyitai.somee.com/website2/default.ashx",
+        async: false,
+        dataType: "json",
+        success: function(datas) {
+            data=datas;
+        }
+    });
+} catch(e) {
+}
