@@ -51,8 +51,8 @@
     },
     {
         name: "距離2015跨年倒數計時",
-        code: "luyas",
-        version: 21,
+        code: "koval",
+        version: 1,
         keyword: ["reciprocal", "new", "year", "time"]
     },
     {
