@@ -170,7 +170,7 @@ body
 .box .aboutme td>div
 {
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .box .aboutme td>div>div 
