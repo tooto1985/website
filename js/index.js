@@ -23,7 +23,7 @@
     function addClicked(code) {
         try{
             $.ajax({
-                url: "http://linyitai.somee.com/website2/default.ashx",
+                url: "http://tommy.somee.com/website2/default.ashx",
                 data: {
                     action:"clicked",
                     code: code
