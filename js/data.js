@@ -144,7 +144,7 @@
 ];
 try {
     $.ajax({
-        url: "http://tommy.somee.com/website2/default.ashx",
+        url: "http://linyitai.somee.com/website2/default.ashx",
         async: false,
         dataType: "json",
         success: function(datas) {
