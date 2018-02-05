@@ -187,6 +187,7 @@
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-49667069-1', 'tooto1985.github.io');
+        ga('require', 'GTM-T3BLTD3');
         ga('send', 'pageview');
     })(); //google analytics
 
